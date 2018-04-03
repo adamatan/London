@@ -58,4 +58,4 @@ typings/
 .env
 *.swp
 dist/
-src/html-compiled/
+src/html-compiled/*
