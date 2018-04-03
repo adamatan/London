@@ -12,5 +12,4 @@ RUN apt-get install -y nodejs
 
 COPY gulpfile.js /site
 COPY package.json /site
-COPY src /site/src
 RUN npm install
