@@ -13,18 +13,69 @@
                 .vh-40-ns {  height: 40vh; }
         </style>
 
-        
+
         <!-- Social media metadata -->
         <meta property="og:title"       content="Serverless Days TLV, May 23rd"/>
         <meta property="og:type"        content="website" />
         <meta property="og:description" content="Serverless Days TLV is developer-oriented conference about FaaS, architecture, security, performance and monitoring Serverless applications with international and local speakers"/>
         <meta property="og:image"       content="https://res.cloudinary.com/serverlessdaystlv/image/upload/c_scale,h_630,w_1200/v1523187590/social_media_snippet.png">
-        
         <meta property="fb:app_id"      content="166257407404434"/>
         <meta property="og:url"         content="https://tlv.serverlessdays.io"/>
         <meta property="og:image:alt"   content="Serverless Days TLV Agenda: May 3 CFP closes, May 6 spearkers announced, May 22nd Hackathon, May 23rd Serverless Days TLV"/>
         <meta name="twitter:card"       content="summary_large_image"/>
 
+        <!-- JSON-LD for seach engines -->
+        <script type='application/ld+json'>
+            {
+               "@context":"http://www.schema.org",
+               "@type":"EducationEvent",
+               "name":"Serverless Days TLV",
+               "image":"https://res.cloudinary.com/serverlessdaystlv/image/upload/c_scale,h_630,w_1200/v1523187590/social_media_snippet.png",
+               "url":"https://tlv.serverlessdays.io/",
+               "description":"Serverless Days TLV is developer-oriented conference about FaaS, architecture, security, performance and monitoring Serverless applications with international and local speakers",
+               "startDate":"2018-05-23T09:00",
+               "endDate":"2018-05-23T18:00",
+               "location":{
+                  "@type":"Place",
+                  "geo":{
+                     "@type":"GeoCoordinates",
+                     "latitude":"32.071751",
+                     "longitude":"34.789118"
+                  },
+                  "name":"LABS Azrieli Sarona Tower Tel Aviv",
+                  "sameAs":"https://labs.com/location/azrieli-sarona-tower-tel-aviv/",
+                  "address":{
+                     "@type":"PostalAddress",
+                     "streetAddress":"121 Menachem Begin Rd.",
+                     "addressLocality":"Tel-Aviv",
+                     "postalCode":"6701203",
+                     "addressCountry":"Israel"
+                  }
+               },
+               "offers":{
+                  "@type":"Offer",
+                  "price":"50",
+                  "availability":"http://schema.org/LimitedAvailability",
+                  "priceCurrency":"ILS",
+                  "validFrom":"2018-04-09T09:00",
+                  "url":"https://tlv.serverlessdays.io"
+               },
+               "performer":[
+                  {
+                     "@type":"Person",
+                     "image":"https://theburningmonk.com/wp-content/uploads/2015/01/mugshot-300x300.png",
+                     "name":"Yan Cui",
+                     "sameAs":"https://theburningmonk.com/"
+                  },
+                  {
+                     "@type":"Person",
+                     "image":"https://pbs.twimg.com/profile_images/890603576757702656/mnG6o95p_400x400.jpg",
+                     "name":"Amir ShevatVerified account",
+                     "sameAs":"https://twitter.com/ashevat"
+                  }
+               ]
+            }
+        </script>
 
 
     </head>
