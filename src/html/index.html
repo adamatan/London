@@ -2,13 +2,24 @@
 <html lang="en">
     <head>
         <title>Serverless Days TLV</title>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100715288-4"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-100715288-4');
+        </script>
+
+        <!--CSS and tachyons-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
         <style>
             .vh-60 { height:60vh; }
             .vh-40 { height:40vh; }
             .vh-30 { height:30vh; }
-
             @media screen and (min-width: 30em) {
                 .vh-40-ns {  height: 40vh; }
         </style>
@@ -78,9 +89,8 @@
                ]
             }
         </script>
-
-
     </head>
+
     <body>
         <div class="fixed w-100 vh-100 cover top-0" style="background:url(https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522754132/tlv.jpg)">
         </div>
