@@ -1,4 +1,4 @@
-DOCKER_RUN := docker run -v src:/site/src -e AWS_SECRET_ACCESS_KEY -e AWS_ACCESS_KEY_ID serverlessdaystlv/site
+DOCKER_RUN := docker run -v src:/site/src -e AWS_SECRET_ACCESS_KEY -e AWS_ACCESS_KEY_ID -p 3000:3000 -p 3001:3001 serverlessdaystlv/site
 
 clean:
 	rm -rf dist
