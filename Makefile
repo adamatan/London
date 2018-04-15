@@ -1,6 +1,9 @@
 DOCKER_RUN := docker run -v src:/site/src -e AWS_SECRET_ACCESS_KEY -e AWS_ACCESS_KEY_ID serverlessdaystlv/site
 
-build:
+clean:
+	rm -rf dist
+
+build: clean
 	docker build -t serverlessdaystlv/site .
 
 create-s3-bucket:
