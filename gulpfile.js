@@ -18,7 +18,7 @@ gulp.task('compress', function(cb) {
 });
 
 gulp.task('fileinclude', function() {
-    gulp.src(['src/html/**/*.html'])
+    gulp.src(['src/html/**'])
       .pipe(fileinclude({
         prefix: '@@',
         basepath: '@file'
