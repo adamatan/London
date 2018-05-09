@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Serverless Days TLV</title>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100715288-4"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-100715288-4');
+        </script>
+
+        <!--CSS and tachyons-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+        <style>
+            .vh-60 { height:60vh; }
+            .vh-40 { height:40vh; }
+            .vh-30 { height:30vh; }
+            @media screen and (min-width: 30em) {
+                .vh-40-ns {  height: 40vh; }
+        </style>
+
+        <!-- Alternative URLs: serverless.org.il, serverlessdaystlv.io -->
+        <link rel="canonical" href="https://tlv.serverlessdays.io" />
+
+        <!-- Facebook metadata -->
+        <meta property="og:title"       content="Serverless Days TLV, May 23rd"/>
+        <meta property="og:type"        content="website" />
+        <meta property="og:description" content="Serverless Days TLV is developer-oriented conference about FaaS, architecture, security, performance and monitoring Serverless applications with international and local speakers"/>
+        <meta property="og:image"       content="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1523818022/facebook-card.png">
+        <meta property="fb:app_id"      content="166257407404434"/>
+        <meta property="og:url"         content="https://tlv.serverlessdays.io"/>
+        <meta property="og:image:alt"   content="Serverless Days TLV Agenda: May 3 CFP closes, May 6 spearkers announced, May 22nd Hackathon, May 23rd Serverless Days TLV"/>
+
+        <!-- Twitter metadata -->
+        <meta name="twitter:image" content="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1523818059/twitter-card.png">
+        <meta name="twitter:card"  content="summary_large_image"/>
+
+        <!-- JSON-LD for search engines -->
+        <script type='application/ld+json'>
+            {
+               "@context":"http://www.schema.org",
+               "@type":"EducationEvent",
+               "name":"Serverless Days TLV",
+               "image":"https://res.cloudinary.com/serverlessdaystlv/image/upload/c_scale,h_630,w_1200/v1523187590/social_media_snippet.png",
+               "url":"https://tlv.serverlessdays.io/",
+               "description":"Serverless Days TLV is developer-oriented conference about FaaS, architecture, security, performance and monitoring Serverless applications with international and local speakers",
+               "startDate":"2018-05-23T09:00",
+               "endDate":"2018-05-23T18:00",
+               "location":{
+                  "@type":"Place",
+                  "geo":{
+                     "@type":"GeoCoordinates",
+                     "latitude":"32.071751",
+                     "longitude":"34.789118"
+                  },
+                  "name":"LABS Azrieli Sarona Tower Tel Aviv",
+                  "sameAs":"https://labs.com/location/azrieli-sarona-tower-tel-aviv/",
+                  "address":{
+                     "@type":"PostalAddress",
+                     "streetAddress":"121 Menachem Begin Rd.",
+                     "addressLocality":"Tel-Aviv",
+                     "postalCode":"6701203",
+                     "addressCountry":"Israel"
+                  }
+               },
+               "offers":{
+                  "@type":"Offer",
+                  "price":"50",
+                  "availability":"http://schema.org/LimitedAvailability",
+                  "priceCurrency":"ILS",
+                  "validFrom":"2018-04-09T09:00",
+                  "url":"https://tlv.serverlessdays.io"
+               },
+               "performer":[
+                  {
+                     "@type":"Person",
+                     "image":"https://tlv.serverlessdays.io/static/profile-images/ran-tavory-profile.jpg",
+                     "name":"Ran Tavory",
+                  }
+               ]
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="fixed w-100 vh-100 cover top-0" style="background:url(https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522754132/tlv.jpg)">
+        </div>
+
+        <div class="w-100 vh-25">
+            <div class="relative w-100 center">
+                <div class="mt2 mt4-ns mh0 ml4-ns pa2 pa0-ns mw6-ns bg-near-white">
+                </div>
+            </div>
+
+            <div class="relative absolute-ns w-100 vh-10-ns bg-black-80 avenir pv3 pt0-ns mt3 mt0-ns">
+                <div class="f4 f2-ns near-white avenir tc">
+                    <p>One Day. One Track. One Community.</p>
+                </div>
+                <div class="dt-ns center">
+                    <div class="dt-row-ns w-100 tc">
+
+                        <div class="dtc-ns pa2">
+                            <a href="../index.html#about">
+                                <button id="cfp-button" type="button" class="f5 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
+                                    About
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class="dtc-ns pa2">
+                            <a href="https://www.eventbrite.com/e/serverless-days-tlv-tickets-44959103890">
+                                <button id="tickets-button" type="button" class="f5 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 blue bg-near-white">
+                                    Register
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class="dtc-ns pa2">
+                            <a href="../index.html#speakers">
+                                <button id="speakers-button" type="button" class="f5 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
+                                    Keynotes
+                                </button>
+                            </a>
+                        </div>
+
+
+                        <div class="dtc-ns pa2">
+                            <a href="../index.html#cfp">
+                                <button id="cfp-button" type="button" class="f6 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
+                                    Call for Papers
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class="dtc-ns pa2">
+                            <a href="../index.html#sponsors">
+                                <button id="sponsor-button" type="button" class="f5 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
+                                    Sponsors
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+
+
+        <div id="session" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
+            <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
+                <h2 class="f3 f2-ns tl">Ran Tavory: Stories from the trenches: What worked and didn't work for us using AWS Lambda</h2>
+
+                <div class="mw9 center ph3-ns">
+                    <div class="cf ph2-ns">
+                        <div class="fl w-100 w-50-ns pa2" style="max-width: 300px; min-width: 300px">
+                            <div class="pv4">
+                                <img src="../static/profile-images/ran-tavory-profile.jpg" alt="Ran Tavory">
+                            </div>
+                        </div>
+                        <div class="fl w-100 w-50-ns pa2">
+                            <div class="pv4">
+                                <h2>Ran Tavory, dev @ appsflyer</h2>
+                                <p class="lh-copy measure f5 white lh-copy">
+                                   Serverless at heart
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+
+
+                <h3 class="lh-copy">Architecting for FaaS or Serverless has its learning curve. Some things need to be learned, others need to be unlearned. In this session I will share the lessons learned while implementing a web crawler and a GraphQL API service atop AWS Lambda.</h4>
+                <p class="f4 lh-copy">Circa 2016 and up until today (2018) the engineering team at Yodas adopted AWS Lambda using the Apex framework and Golang. We implemented several use cases, including a web crawler and an GraphQL based API. In this session I will share the lessons learned while implementing these two use cases atop AWS Lambda.</p>
+            </div>
+        </div>   
+
+
+        <div id="sponsors" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
+            <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
+                <h2 class="f3 f2-ns tl">Sponsors</h2>
+
+                <div id="sponsors-logos" class="flex flex-wrap">
+
+
+                    <div class="w-25 pa3 mr2 flex" style="min-width: 300px; min-width: 300px; margin-bottom: 50px">
+                        <img src="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522843555/binaris-logo.svg" alt="Binaris Logo">
+                    </div>
+
+                    <div class="w-25 pa3 mr2" style="min-width: 300px; min-width: 300px; margin-bottom: 50px">
+                        <img src="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522842921/Puresec_H.png" alt="Puresec Logo">
+                    </div>
+
+                    <div class="w-25 pa3 mr2" style="min-width: 300px; min-width: 300px; margin-bottom: 50px">
+                        <img src="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1523275697/Epsagon-square-logo.svg" alt="Epsagon Logo">
+                    </div>
+
+                    <div class="w-25 pa3 mr2" style="min-width: 300px; min-width: 300px; margin-bottom: 50px">
+                        <img src="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522843159/AWS.svg" alt="AWS Logo">
+                    </div>
+
+                    <div class="w-25 pa3 mr2" style="min-width: 300p; min-width: 300px; margin-bottom: 50px">
+                        <img src="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522842921/Wix.png" alt="Wix Logo">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <footer id="foot" class="relative w-100 bg-black-80">
+
+            <div class="tc avenir pt2 f5">
+                <span class="pa1 pa3-ns">
+                    <a class="orange no-underline" href="mailto:tlv@serverlessdays.io" title="Email us at tlv@serverlessdays.io">
+                        tlv@serverlessdays.io
+                    </a>
+                </span>
+                <span class="pa1 pa3-ns near-white">
+                    <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16" width="16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.375-1.337.648-2.085.795-.598-.638-1.45-1.036-2.396-1.036-1.812 0-3.282 1.468-3.282 3.28 0 .258.03.51.085.75C5.152 5.39 2.733 4.084 1.114 2.1.83 2.583.67 3.147.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.416-.02-.617-.058.418 1.304 1.63 2.253 3.067 2.28-1.124.88-2.54 1.404-4.077 1.404-.265 0-.526-.015-.783-.045 1.453.93 3.178 1.474 5.032 1.474 6.038 0 9.34-5 9.34-9.338 0-.143-.004-.284-.01-.425.64-.463 1.198-1.04 1.638-1.7z" fill-rule="nonzero"></path></svg>
+                    <a class="orange no-underline" href="https://twitter.com/SrvrlessDaysTLV" title="Talk to us at @SrvrlessDaysTLV">
+                        @SrvrlessDaysTLV
+                    </a>
+
+                </span>
+            </div>
+
+            <div class="mt4 w-100 ph4 pb3 tc">
+                <img class="ph3 ma0" src="https://res.cloudinary.com/senzo/image/upload/c_scale,w_90/v1518368936/octo_mascot_usu91v.png">
+                <img class="ph3 ma0" src="https://res.cloudinary.com/senzo/image/upload/c_scale,w_80/v1518368936/unicorn_mascot_1_vyq3zb.png">
+                <img class="ph3 ma0" src="https://res.cloudinary.com/senzo/image/upload/c_scale,w_100/v1518368936/Moth_mascot_jeph83.png">
+                <img class="ph3 ma0" src="https://res.cloudinary.com/senzo/image/upload/c_scale,w_100/v1518368935/owl_mascot_tfpz2j.png">
+                <img class="ph3 ma0" src="https://res.cloudinary.com/senzo/image/upload/c_scale,w_70/v1518368936/Dino_mascot_1_ycezll.png">
+                <img class="ph3 ma0" src="https://res.cloudinary.com/senzo/image/upload/c_scale,w_90/v1518368935/Anteater_png_3_hy7l5s.png">
+                <img class="ph3 ma0" src="https://res.cloudinary.com/senzo/image/upload/c_scale,w_60/v1486988424/SERVERLESS_NO_BACKGROUND_opzcgz.png">
+
+            </div>
+
+            <div class="w-100 center pv1">
+                <p class="f6 black-80 tc i" style="font-family:'Comic Sans MS', cursive, sans-serif">Jeff woz here</p>
+                <p class="f6 navy tc" style="font-family:'Comic Sans MS', cursive, sans-serif">
+                    <a class="navy" href="https://flic.kr/p/mbip1">"Tel Aviv Beach"</a> by 
+                    <a class="navy" href="https://www.flickr.com/photos/chanycrystal/">chany crystal</a> is licensed under 
+                    <a class="navy" href="https://creativecommons.org/licenses/by-nd/2.0/">CC BY-ND 2.0</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

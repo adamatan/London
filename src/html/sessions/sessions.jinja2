@@ -1,0 +1,7 @@
+<body>
+    <ul>
+    {% for session in SESSIONS -%}
+                     <li><a href="{{ session.absolute_url }}">{{ session.name }}</a></li>
+    {% endfor -%}
+    </ul>
+</body>
