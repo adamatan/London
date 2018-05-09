@@ -4,6 +4,7 @@
 import csv
 from slugify import slugify
 from jinja2 import Template
+import urllib.request
 
 BASE_URL = 'https://tlv.serverlessdays.io/sessions/'
 
@@ -35,6 +36,16 @@ def normalize(d):
     rv['profile_image_path'] = '{}-profile.jpg'.format(slugify(rv['name']))
     return rv
 
+def download_csv_from_google_sheets():
+    long_id = '10nuL6-3J9BfnrIr3R2WlK8vLfQeJ3eIjhip836MSwVw'
+    g_id = '480941883'
+    csv_url = 'https://docs.google.com/spreadsheets/d/{long_id}/export?gid={g_id}&format=csv&id={long_id}'.format(long_id=long_id, g_id=g_id)
+    print(csv_url)
+    urllib.request.urlretrieve(csv_url, "sessions.csv")
+
+
+download_csv_from_google_sheets()
+
 # CSV from Google Sheets
 with open('sessions.csv', encoding='utf-8') as f:
     READER = csv.DictReader(f)
@@ -55,6 +66,7 @@ for session in SESSIONS:
     with open(local_file_path, 'w', encoding='utf-8') as f:
         f.write(template.render(session))
 
+print (session.keys())
 local_file_path = 'html/sessions/sessions.html'
 with open(local_file_path, 'w', encoding='utf-8') as f:
     f.write(sessions_template.render( locals() ))
