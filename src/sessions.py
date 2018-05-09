@@ -6,7 +6,9 @@ from slugify import slugify
 from jinja2 import Template
 import urllib.request
 
-BASE_URL = 'https://tlv.serverlessdays.io/sessions/'
+BASE_URL = 'https://tlv.serverlessdays.io'
+SESSIONS_URL = BASE_URL+'/sessions'
+SHARING_IMAGE_BASE_URL = BASE_URL + '/static/sharing-images'
 
 """Replace the keys taken from Google Sheets csv with shorter ones"""
 keys_normal = {
@@ -21,6 +23,9 @@ keys_normal = {
     'Profile image': 'profile_image',
 }
 
+def build_sharing_image_url(name, session_title, media):
+    return SHARING_IMAGE_BASE_URL + '/' + slugify('{}-{}-{}-sharing-image'.format(name, session_title, media))+'.png'
+
 def normalize(d):
     """Replace the keys taken from Google Sheets csv with shorter ones,
     and add convenience members."""
@@ -32,8 +37,9 @@ def normalize(d):
             rv[k] = d[k]
 
     rv['url'] = slugify('{} {}'.format(rv['name'], rv['session_title']))
-    rv['absolute_url'] = '{}{}.html'.format(BASE_URL, rv['url'])
+    rv['absolute_url'] = '{}{}.html'.format(SESSIONS_URL, rv['url'])
     rv['profile_image_path'] = '{}-profile.jpg'.format(slugify(rv['name']))
+    rv['facebook_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'facebook')
     return rv
 
 def download_csv_from_google_sheets():
@@ -62,7 +68,7 @@ with open('html/sessions/sessions.jinja2', encoding='utf-8') as f:
 
 for session in SESSIONS:
     local_file_path = 'html/sessions/{}.html'.format(session['url'])
-    print(session['session_subtitle'])
+    print(session['facebook_sharing_image_url'])
     with open(local_file_path, 'w', encoding='utf-8') as f:
         f.write(template.render(session))
 
