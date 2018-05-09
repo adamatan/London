@@ -40,6 +40,8 @@ def normalize(d):
     rv['absolute_url'] = '{}{}.html'.format(SESSIONS_URL, rv['url'])
     rv['profile_image_path'] = '{}-profile.jpg'.format(slugify(rv['name']))
     rv['facebook_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'facebook')
+    rv['twitter_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'twitter')
+    rv['linkedin_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'linkedin')
     return rv
 
 def download_csv_from_google_sheets():
