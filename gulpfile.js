@@ -38,7 +38,10 @@ gulp.task('copy', function() {
     return gulp.src([
             'src/_redirects',
             'src/*.xml',
-            'src/html/**/*.pdf'
+            'src/html/**/*.pdf',
+            'src/html/**/*.png',
+            'src/html/**/*.jpg',
+            'src/html-compiled/**/*.html'
         ])
         .pipe(gulp.dest('dist'));
 });
@@ -66,7 +69,7 @@ function simpleURLRewrite(req,res,next) {
 gulp.task('browser-sync', ['fileinclude'], function() {
     browserSync.init({
         server: {
-            baseDir: "./src/html-compiled/",
+            baseDir: "./src/html/",
         },
         middleware: simpleURLRewrite,
     });
