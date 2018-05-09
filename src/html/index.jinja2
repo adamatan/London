@@ -2,8 +2,6 @@
 <html lang="en">
     <head>
         <title>Serverless Days TLV</title>
-        <meta charset="utf-8">
-        <meta name="description" content="Ran Ribenzaft - Monitoring serverless applications - What we should all worry about when monitoring serverless applications">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100715288-4"></script>
@@ -27,27 +25,20 @@
         </style>
 
         <!-- Alternative URLs: serverless.org.il, serverlessdaystlv.io -->
-        <link rel="canonical" href="https://tlv.serverlessdays.io/sessions/ran-ribenzaft-monitoring-serverless-applications.html" />
+        <link rel="canonical" href="https://tlv.serverlessdays.io" />
 
         <!-- Facebook metadata -->
-        <meta property="og:title"        content="Ran Ribenzaft - Monitoring serverless applications"/>
-        <meta property="og:type"         content="website" />
-        <meta property="og:description"  content="What we should all worry about when monitoring serverless applications"/>
-        <meta property="og:image"        content="https://tlv.serverlessdays.io/static/sharing-images/ran-ribenzaft-monitoring-serverless-applications-facebook-sharing-image.png">
-        <meta property="fb:app_id"       content="166257407404434"/>
-        <meta property="og:url"          content="https://tlv.serverlessdays.io/sessions/ran-ribenzaft-monitoring-serverless-applications.html"/>
-        <meta property="og:image:alt"    content="Ran Ribenzaft - Monitoring serverless applications"/>
-        <meta property="og:site_name"    content="Serverless Days TLV" />
-        <meta property="og:image:width"  content="1200" />
-        <meta property="og:image:height" content="627" />
-
+        <meta property="og:title"       content="Serverless Days TLV, May 23rd"/>
+        <meta property="og:type"        content="website" />
+        <meta property="og:description" content="Serverless Days TLV is developer-oriented conference about FaaS, architecture, security, performance and monitoring Serverless applications with international and local speakers"/>
+        <meta property="og:image"       content="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1523818022/facebook-card.png">
+        <meta property="fb:app_id"      content="166257407404434"/>
+        <meta property="og:url"         content="https://tlv.serverlessdays.io"/>
+        <meta property="og:image:alt"   content="Serverless Days TLV Agenda: May 3 CFP closes, May 6 spearkers announced, May 23rd Serverless Days TLV"/>
 
         <!-- Twitter metadata -->
-        <meta name="twitter:title"       content="Ran Ribenzaft - Monitoring serverless applications">
-        <meta name="twitter:site"        content="@SrvrlessDaysTLV">
-        <meta name="twitter:description" content="What we should all worry about when monitoring serverless applications"/>
-        <meta name="twitter:image"       content="https://tlv.serverlessdays.io/static/sharing-images/ran-ribenzaft-monitoring-serverless-applications-twitter-sharing-image.png">
-        <meta name="twitter:card"        content="summary_large_image"/>
+        <meta name="twitter:image" content="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1523818059/twitter-card.png">
+        <meta name="twitter:card"  content="summary_large_image"/>
 
         <!-- JSON-LD for search engines -->
         <script type='application/ld+json'>
@@ -88,8 +79,15 @@
                "performer":[
                   {
                      "@type":"Person",
-                     "image":"https://tlv.serverlessdays.io/static/profile-images/ran-ribenzaft-profile.jpg",
-                     "name":"Ran Ribenzaft",
+                     "image":"https://theburningmonk.com/wp-content/uploads/2015/01/mugshot-300x300.png",
+                     "name":"Yan Cui",
+                     "sameAs":"https://theburningmonk.com/"
+                  },
+                  {
+                     "@type":"Person",
+                     "image":"https://pbs.twimg.com/profile_images/890603576757702656/mnG6o95p_400x400.jpg",
+                     "name":"Amir Shevat",
+                     "sameAs":"https://twitter.com/ashevat"
                   }
                ]
             }
@@ -100,13 +98,24 @@
         <div class="fixed w-100 vh-100 cover top-0" style="background:url(https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522754132/tlv.jpg)">
         </div>
 
-        <div class="w-100 vh-25">
+        <div class="w-100 vh-100">
             <div class="relative w-100 center">
                 <div class="mt2 mt4-ns mh0 ml4-ns pa2 pa0-ns mw6-ns bg-near-white">
+                    <img class="pa0 pa3-ns" src="https://res.cloudinary.com/serverlessdays/image/upload/c_scale,w_400/v1521408640/serverless_logo_no_undertext.png" alt="ServerlessDays Logo"/>
+                    <div class="tl f4 fw8 code pl3 pb1">
+                        <p class="pa0">23 May 2018, LABS Azrieli Sarona, TLV</p>
+                    </div>
+                    <div class="tl f6 fw4 code pl4 pb4">
+                        <p class="ma0 mt1">2018/04/03 - Call for Papers opens</p>
+                        <p class="mb0 mt1">2018/04/09 - Tickets go on sale</p>
+                        <p class="ma0 mt1">2018/05/03 - Call for Papers closes</p>
+                        <p class="mb0 mt1">2018/05/10 - Speaker announcement</p>
+                        <p class="mb0 mt1">2018/05/23 - Serverless Days TLV</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="relative absolute-ns w-100 vh-10-ns bg-black-80 avenir pv3 pt0-ns mt3 mt0-ns">
+            <div class="relative absolute-ns bottom--2-ns w-100 vh-20-ns bg-black-80 avenir pv3 pt0-ns mt3 mt0-ns">
                 <div class="f4 f2-ns near-white avenir tc">
                     <p>One Day. One Track. One Community.</p>
                 </div>
@@ -114,12 +123,29 @@
                     <div class="dt-row-ns w-100 tc">
 
                         <div class="dtc-ns pa2">
-                            <a href="../index.html#about">
-                                <button id="cfp-button" type="button" class="f5 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
+                            <a href="#about">
+                                <button id="about-button" type="button" class="f5 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
                                     About
                                 </button>
                             </a>
                         </div>
+
+
+                        <div class="dtc-ns pa2">
+                            <a href="#agenda">
+                                <button id="speakers-button" type="button" class="f5 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
+                                    Agenda 
+                                </button>
+                            </a>
+                        </div>
+
+                        {#<div class="dtc-ns pa2">
+                            <a href="#speakers">
+                                <button id="speakers-button" type="button" class="f5 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
+                                    Speakers 
+                                </button>
+                            </a>
+                        </div>#}
 
                         <div class="dtc-ns pa2">
                             <a href="https://www.eventbrite.com/e/serverless-days-tlv-tickets-44959103890">
@@ -129,25 +155,16 @@
                             </a>
                         </div>
 
-                        <div class="dtc-ns pa2">
-                            <a href="../index.html#speakers">
-                                <button id="speakers-button" type="button" class="f5 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
-                                    Keynotes
-                                </button>
-                            </a>
-                        </div>
-
-
-                        <div class="dtc-ns pa2">
-                            <a href="../index.html#cfp">
-                                <button id="cfp-button" type="button" class="f6 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
-                                    Call for Papers
-                                </button>
-                            </a>
-                        </div>
+                        {#<div class="dtc-ns pa2">
+                        <a href="#cfp">
+                            <button id="cfp-button" type="button" class="f6 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
+                                Call for Papers
+                            </button>
+                        </a>
+                        </div>#}
 
                         <div class="dtc-ns pa2">
-                            <a href="../index.html#sponsors">
+                            <a href="#sponsors">
                                 <button id="sponsor-button" type="button" class="f5 link dim br3 ph3 pv2 mb2 dib pv3-ns w4 br2 b--black bg-near-white">
                                     Sponsors
                                 </button>
@@ -160,33 +177,98 @@
 
 
 
-        <div id="session" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
+        <div id="about" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
             <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
-                <h2 class="f3 f2-ns tl">Ran Ribenzaft: Monitoring serverless applications</h2>
+                <h2 class="f3 f2-ns tl">About</h2>
+                <div class="f6 f5-ns mt4 lh-copy">
+                    <p>Serverless Days TLV is developer-oriented conference about Serverless tech. We believe in <span class="i">show, don't tell</span> sessions, in which developers
+                        share their experience and lessons from actual projects.</p>
+                    <p>We will host sessions about FaaS, architecture, security, performance and monitoring Serverless applications with the best speakers we can find.</p>
+                    <p>Serverless Days Tel Aviv is about content for seasoned cloud developers and entrepreneurs. We will skip introductory tutorials and <span class="i">hello, world</span>s and focus on lessons learned by local and international users with extensive experience.</p>
+                    <p>Serverless Days TLV is member of <a href="https://serverlessdays.io/" class="link dim blue">Serverless Days</a> (AKA JeffConf), a family of events around the world fostering communities around serverless tech. We follow and enforce the <a href="https://serverlessdays.io/coc" class="link dim blue">Serverless Days Code of Conduct</a>.</p>
+                    <p><a href="https://www.eventbrite.com/e/serverless-days-tlv-tickets-44959103890" class="link dim blue">Registeration</a> is now open. The ticket price is 50&#x20AA;, which are donated to <a href="http://www.hasadna.org.il" class="link dim blue">The Public Knowledge Workshop</a>.</p>
+                </div>
+            </div>
+        </div>
 
-                <div class="mw9 center ph3-ns">
-                    <div class="cf ph2-ns">
-                        <div class="fl w-100 w-50-ns pa2" style="max-width: 300px; min-width: 300px">
-                            <div class="pv4">
-                                <img src="../static/profile-images/ran-ribenzaft-profile.jpg" alt="Ran Ribenzaft">
-                            </div>
-                        </div>
-                        <div class="fl w-100 w-50-ns pa2">
-                            <div class="pv4">
-                                <h2>Ran Ribenzaft, Co-Founder and CTO at Epsagon</h2>
-                                <p class="lh-copy measure f5 white lh-copy">
-                                   Entrepreneur, with vast experience in R&D and cyber-security. Passionate about cloud and serverless architectures. Alexa skills developer.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
+        <div id="agenda" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
+            <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
+                <h2 class="f3 f2-ns tl">Agenda</h2>
 
+                {% for session in sessions %}
+                <div class="pa2 mr2">
 
-                <h3 class="lh-copy">What we should all worry about when monitoring serverless applications</h3>
-                <p class="f4 lh-copy">Worried about problems or performance issues in your user experience? Discover the metrics that are critical when monitoring your serverless applications. A serverless expert will take you through the evolution of application architectures and their monitoring challenges. Participants will learn how to better monitor and troubleshoot issues and better understand how the events in their serverless applications are connected. This session is helpful for people who have a basic understanding of serverless environments as well as seasoned serverless developers.</p>
+                    <table style="width:100%">
+                        <tr>
+                            <td>
+                                <a href="{{ session.absolute_url }}" class="link dim blue"><h1>{{ session.session_title }}</h1></a>
+
+                                <h4>{{ session.name }}, {{ session.speaker_title }}</h4>
+                                <p>{{ session.session_subtitle }}</p>
+                            </td>
+                            <td width="30%">
+
+                                <div class="w-25 pa3 mr2" style="min-width: 300px; min-width: 300px">
+                                    <a href="{{ session.absolute_url }}">
+                                        <img src="{{ session.profile_image_url }}" alt="{{ session.name }}">
+                                    </a>
+                                </div>
+                            </td> 
+                        </tr>
+                    </table>
+                </div>
+                {% endfor %}
             </div>
         </div>   
+
+        {#<div id="speakers" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
+            <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
+                <h2 class="f3 f2-ns tl">Speakers</h2>
+
+                <div id="speakers-images" class="flex flex-wrap">
+
+                    {% for session in sessions %}
+                    <div class="w-25 pa3 mr2" style="min-width: 300px; min-width: 300px">
+                        <a href="{{ session.absolute_url }}">
+                            <img src="{{ session.profile_image_url }}" alt="{{ session.name }}">
+                        </a>
+                        <h3>{{ session.name }}</h3>
+                        <h4>{{ session.speaker_title }}</h4>
+                    </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>#}   
+
+        {#
+        <div id="cfp" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
+            <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
+                <h2 class="f3 f2-ns tl">Call for Papers</h2>
+                <div class="f6 f5-ns mt4 lh-copy">
+                    <p>We welcome local and international speakers, and sessions about any Serverless topic, including:</p>
+                    <ul>
+                        <li>Stories from the trenches: your triumphs and failures with serverless projects</li>
+                        <li>Serverless tools and techniques</li>
+                        <li>Performance</li>
+                        <li>Monitoring</li>
+                        <li>Security</li>
+                        <li>Open source projects, either using serverless or featuring serverless tools</li>
+                        <li>The serverless marketscape</li>
+                        <li>The human factor: the development model in serverless architecture</li>
+                        <li>Storage and DBs for Serverless architecture</li>
+                    </ul>
+                    <p>
+                        <a href="https://www.papercall.io/serverless-days-tlv-may-23-2018" class="link dim blue">The Call For Papers is open</a> till May 3rd, 23:59:59 UTC.
+                    </p>
+                    <p>
+                        <a href="#foot" class="link dim blue">Email or tweet</a> us if you have any questions.
+                    </p>
+                </div>
+            </div>
+        </div>
+        #}
+
 
 
         <div id="sponsors" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">

@@ -9,6 +9,7 @@ import urllib.request
 BASE_URL = 'https://tlv.serverlessdays.io'
 SESSIONS_URL = BASE_URL+'/sessions'
 SHARING_IMAGE_BASE_URL = BASE_URL + '/static/sharing-images'
+PROFILE_IMAGE_BASE_URL = BASE_URL + '/static/profile-images'
 
 """Replace the keys taken from Google Sheets csv with shorter ones"""
 keys_normal = {
@@ -37,8 +38,9 @@ def normalize(d):
             rv[k] = d[k]
 
     rv['url'] = slugify('{} {}'.format(rv['name'], rv['session_title']))
-    rv['absolute_url'] = '{}{}.html'.format(SESSIONS_URL, rv['url'])
+    rv['absolute_url'] = '{}/{}.html'.format(SESSIONS_URL, rv['url'])
     rv['profile_image_path'] = '{}-profile.jpg'.format(slugify(rv['name']))
+    rv['profile_image_url'] = PROFILE_IMAGE_BASE_URL + '/' + rv['profile_image_path']
     rv['facebook_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'facebook')
     rv['twitter_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'twitter')
     rv['linkedin_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'linkedin')
@@ -51,6 +53,11 @@ def download_csv_from_google_sheets():
     print(csv_url)
     urllib.request.urlretrieve(csv_url, "sessions.csv")
 
+def create_index_file(sessions):
+    with open('html/index.jinja2', encoding='utf-8') as f:
+        template = Template(f.read())
+    with open('html/index.html', 'w',  encoding='utf-8') as f:
+        f.write(template.render(sessions=sessions))
 
 download_csv_from_google_sheets()
 
@@ -58,6 +65,8 @@ download_csv_from_google_sheets()
 with open('sessions.csv', encoding='utf-8') as f:
     READER = csv.DictReader(f)
     SESSIONS = [normalize(session) for session in list(READER)]
+
+create_index_file(SESSIONS)
 
 # Session template
 with open('html/sessions/template.jinja2', encoding='utf-8') as f:
@@ -67,14 +76,15 @@ with open('html/sessions/template.jinja2', encoding='utf-8') as f:
 with open('html/sessions/sessions.jinja2', encoding='utf-8') as f:
     sessions_template = Template(f.read())
 
-
+# Create session webpages
 for session in SESSIONS:
     local_file_path = 'html/sessions/{}.html'.format(session['url'])
-    print(session['facebook_sharing_image_url'])
     with open(local_file_path, 'w', encoding='utf-8') as f:
         f.write(template.render(session))
 
-print (session.keys())
+print(session.keys())
+print (session)
+# Write temporary sessions file
 local_file_path = 'html/sessions/sessions.html'
 with open(local_file_path, 'w', encoding='utf-8') as f:
     f.write(sessions_template.render( locals() ))
