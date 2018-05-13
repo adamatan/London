@@ -62,4 +62,4 @@ src/html-compiled/*
 sessions.csv
 .DS_Store
 src/html/sessions/*.html
-index.html
+src/html/index.html
