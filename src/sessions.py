@@ -79,6 +79,7 @@ with open('html/sessions/sessions.jinja2', encoding='utf-8') as f:
 # Create session webpages
 for session in SESSIONS:
     local_file_path = 'html/sessions/{}.html'.format(session['url'])
+    print('{}: {}'.format(session['name'], session['session_title']))
     with open(local_file_path, 'w', encoding='utf-8') as f:
         f.write(template.render(session))
 
