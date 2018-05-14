@@ -109,7 +109,6 @@
                     <div class="tl f6 fw4 code pl4 pb4">
                         <a href="#about" class="link dim blue">About</a> //
                         <a href="#agenda" class="link dim blue">Agenda</a> //
-                        <a href="#speakers" class="link dim blue">Speakers</a> //
                         <a href="https://www.eventbrite.com/e/serverless-days-tlv-tickets-44959103890" class="link dim blue">Register</a> //
                         <a href="#sponsors" class="link dim blue">Sponsors</a>
                     </div>
@@ -154,7 +153,10 @@
         {% if not slot.break %}
 
         <tr class="pb0">
-          <td class="pv3 pr3 bb b--black-20 v-top">{{ slot.start_time }}</td>
+          <td class="pv3 pr3 bb b--black-20 ">{{ slot.start_time }}</td>
+          <td class="pv3 pr3 bb b--black-20 v-top">
+                <img src="{{ slot.profile_image_url }}" alt="{{ slot.name }}">
+          </td>
           <td class="pv3 pr3 bb b--black-20">
                 {{ slot.name }}: 
                 <a href="{{ slot.absolute_url }}" class="link dim light-blue">
@@ -209,7 +211,7 @@
         
 
 
-
+        {#
         <div id="speakers" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
             <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
                 <h2 class="f3 f2-ns tl">Speakers</h2>
@@ -226,7 +228,7 @@
                 </div>
             </div>
         </div>
-
+        #}
         <div id="sponsors" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
             <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
                 <h2 class="f3 f2-ns tl">Sponsors</h2>
