@@ -40,7 +40,7 @@ def normalize(d):
 
     rv['url'] = slugify('{} {}'.format(rv['name'], rv['session_title']))
     rv['absolute_url'] = '{}/{}.html'.format(SESSIONS_URL, rv['url'])
-    rv['profile_image_path'] = '{}-profile.jpg'.format(slugify(rv['name']))
+    rv['profile_image_path'] = '{}-profile.png'.format(slugify(rv['name']))
     rv['profile_image_url'] = PROFILE_IMAGE_BASE_URL + '/' + rv['profile_image_path']
     rv['facebook_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'facebook')
     rv['twitter_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'twitter')
@@ -70,6 +70,8 @@ with open('sessions.csv', encoding='utf-8') as f:
     SESSIONS = [s for s in slots if not s['break']]
     BREAKS = [s for s in slots if s['break']]
 
+for slot in slots:
+    print (slot.get('profile_image_url'))
 create_index_file(SESSIONS, slots)
 
 # Session template
@@ -80,7 +82,7 @@ with open('html/sessions/template.jinja2', encoding='utf-8') as f:
 with open('html/sessions/sessions.jinja2', encoding='utf-8') as f:
     sessions_template = Template(f.read())
 
-# Create session webpages
+# Create session we
 for session in SESSIONS:
     local_file_path = 'html/sessions/{}.html'.format(session['url'])
     print('{}: {}'.format(session['name'], session['session_title']))
