@@ -70,8 +70,6 @@ with open('sessions.csv', encoding='utf-8') as f:
     SESSIONS = [s for s in slots if not s['break']]
     BREAKS = [s for s in slots if s['break']]
 
-for slot in slots:
-    print (slot.get('profile_image_url'))
 create_index_file(SESSIONS, slots)
 
 # Session template
