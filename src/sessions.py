@@ -22,6 +22,7 @@ keys_normal = {
     'Preferred session duration': 'duration', 
     'Session language (we prefer English, if possible)': 'language',
     'Profile image': 'profile_image',
+    'Preferred session duration': 'duration'
 }
 
 def build_sharing_image_url(name, session_title, media):
@@ -53,20 +54,23 @@ def download_csv_from_google_sheets():
     print(csv_url)
     urllib.request.urlretrieve(csv_url, "sessions.csv")
 
-def create_index_file(sessions):
+def create_index_file(sessions, slots):
     with open('html/index.jinja2', encoding='utf-8') as f:
         template = Template(f.read())
     with open('html/index.html', 'w',  encoding='utf-8') as f:
-        f.write(template.render(sessions=sessions))
+        f.write(template.render(locals()))
 
 download_csv_from_google_sheets()
 
 # CSV from Google Sheets
 with open('sessions.csv', encoding='utf-8') as f:
     READER = csv.DictReader(f)
-    SESSIONS = [normalize(session) for session in list(READER)]
+    lines = list(READER)
+    slots = [normalize(session) for session in lines]
+    SESSIONS = [s for s in slots if not s['break']]
+    BREAKS = [s for s in slots if s['break']]
 
-create_index_file(SESSIONS)
+create_index_file(SESSIONS, slots)
 
 # Session template
 with open('html/sessions/template.jinja2', encoding='utf-8') as f:

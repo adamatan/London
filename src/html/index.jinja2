@@ -107,9 +107,10 @@
                         <p class="pa0">LABS Azrieli Sarona, TLV</p>
                     </div>
                     <div class="tl f6 fw4 code pl4 pb4">
-                        <a href="#about" class="link dim blue">About</a> &bull;
-                        <a href="#agenda" class="link dim blue">Agenda</a> &bull;
-                        <a href="https://www.eventbrite.com/e/serverless-days-tlv-tickets-44959103890" class="link dim blue">Register</a> &bull;
+                        <a href="#about" class="link dim blue">About</a> //
+                        <a href="#agenda" class="link dim blue">Agenda</a> //
+                        <a href="#speakers" class="link dim blue">Speakers</a> //
+                        <a href="https://www.eventbrite.com/e/serverless-days-tlv-tickets-44959103890" class="link dim blue">Register</a> //
                         <a href="#sponsors" class="link dim blue">Sponsors</a>
                     </div>
                 </div>
@@ -130,10 +131,10 @@
                 <div class="f6 f5-ns mt4 lh-copy">
                     <p>Serverless Days TLV is developer-oriented conference about Serverless tech. We believe in <span class="i">show, don't tell</span> sessions, in which developers
                         share their experience and lessons from actual projects.</p>
-                    <p>We will host sessions about FaaS, architecture, security, performance and monitoring Serverless applications with the best speakers we can find.</p>
-                    <p>Serverless Days Tel Aviv is about content for seasoned cloud developers and entrepreneurs. We will skip introductory tutorials and <span class="i">hello, world</span>s and focus on lessons learned by local and international users with extensive experience.</p>
-                    <p>Serverless Days TLV is member of <a href="https://serverlessdays.io/" class="link dim blue">Serverless Days</a> (AKA JeffConf), a family of events around the world fostering communities around serverless tech. We follow and enforce the <a href="https://serverlessdays.io/coc" class="link dim blue">Serverless Days Code of Conduct</a>.</p>
-                    <p><a href="https://www.eventbrite.com/e/serverless-days-tlv-tickets-44959103890" class="link dim blue">Registeration</a> is now open. The ticket price is 50&#x20AA;, which are donated to <a href="http://www.hasadna.org.il" class="link dim blue">The Public Knowledge Workshop</a>.</p>
+                    <p>Our main interests are lessons learned from real-life projects, architecture, security, performance and monitoring.</p>
+                    <p>Serverless Days Tel Aviv is aimed for seasoned cloud developers and entrepreneurs. We will skip introductory tutorials and <span class="i">hello, world</span>s and focus on lessons learned by local and international users with extensive experience.</p>
+                    <p>Serverless Days TLV is member of <a href="https://serverlessdays.io/" class="link dim blue">Serverless Days</a> (AKA JeffConf), a family of events around the world fostering communities around Serverless tech. We follow and enforce the <a href="https://serverlessdays.io/coc" class="link dim blue">Serverless Days Code of Conduct</a>.</p>
+                    <p><a href="https://www.eventbrite.com/e/serverless-days-tlv-tickets-44959103890" class="link dim blue">Tickets</a> cost 50 ILS. Proceeds are donated to <a href="http://www.hasadna.org.il" class="link dim blue">The Public Knowledge Workshop</a>.</p>
                 </div>
             </div>
         </div>
@@ -142,6 +143,43 @@
             <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
                 <h2 class="f3 f2-ns tl">Agenda</h2>
 
+ 
+
+
+    <table class="f4 w-100 center" cellspacing="0">
+      <tbody class="lh-copy">
+
+        {% for slot in slots | sort(attribute='start_time')  %}
+
+        {% if not slot.break %}
+
+        <tr class="pb0">
+          <td class="pv3 pr3 bb b--black-20 v-top">{{ slot.start_time }}</td>
+          <td class="pv3 pr3 bb b--black-20">
+                {{ slot.name }}: 
+                <a href="{{ slot.absolute_url }}" class="link dim light-blue">
+                    {{ slot.session_title }}
+                </a>
+                {% if slot.duration == 'Keynote' %} <span class="f6 light-yellow">&emsp; ({{slot.duration}})</span> {% endif %}
+<p class="f5 pb0">{{ slot.session_subtitle }}</p>
+                </td>
+        </tr>
+
+        {% else %}
+
+        <tr>
+          <td class="pv3 pr3 bb b--black-20">{{ slot.start_time }}</td>
+          <td class="pv3 pr3 bb b--black-20">{{ slot.name }}</td>
+        </tr>
+
+        {% endif %}
+
+        {% endfor %}
+
+      </tbody>
+    </table>
+
+    {#
                 {% for session in sessions %}
                 <div class="pa2 mr2">
                     <table style="width:100%">
@@ -165,58 +203,29 @@
                     </table>
                 </div>
                 {% endfor %}
+                #}
             </div>
         </div>   
+        
 
-        {#<div id="speakers" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
+
+
+        <div id="speakers" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
             <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
                 <h2 class="f3 f2-ns tl">Speakers</h2>
 
-                <div id="speakers-images" class="flex flex-wrap">
-
-                    {% for session in sessions %}
-                    <div class="w-25 pa3 mr2" style="min-width: 300px; min-width: 300px">
-                        <a href="{{ session.absolute_url }}">
-                            <img src="{{ session.profile_image_url }}" alt="{{ session.name }}">
-                        </a>
-                        <h3>{{ session.name }}</h3>
-                        <h4>{{ session.speaker_title }}</h4>
+                <div id="speakers-logos" class="flex-wrap">
+                  {% for session in sessions | sort(attribute='duration')  %}
+                    <div class="w-50 h-25 pa3 mr2" >
+                      <a href="{{ session.absolute_url }}">
+                      <img src="{{ session.profile_image_url }}" alt="{{ session.name }}">
+                      </a>
+                      <p class="f3"> {{ session.name }}, <span class="f4"> {{ session.speaker_title }} </span></p>
                     </div>
-
                     {% endfor %}
                 </div>
             </div>
-        </div>#}   
-
-        {#
-        <div id="cfp" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
-            <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
-                <h2 class="f3 f2-ns tl">Call for Papers</h2>
-                <div class="f6 f5-ns mt4 lh-copy">
-                    <p>We welcome local and international speakers, and sessions about any Serverless topic, including:</p>
-                    <ul>
-                        <li>Stories from the trenches: your triumphs and failures with serverless projects</li>
-                        <li>Serverless tools and techniques</li>
-                        <li>Performance</li>
-                        <li>Monitoring</li>
-                        <li>Security</li>
-                        <li>Open source projects, either using serverless or featuring serverless tools</li>
-                        <li>The serverless marketscape</li>
-                        <li>The human factor: the development model in serverless architecture</li>
-                        <li>Storage and DBs for Serverless architecture</li>
-                    </ul>
-                    <p>
-                        <a href="https://www.papercall.io/serverless-days-tlv-may-23-2018" class="link dim blue">The Call For Papers is open</a> till May 3rd, 23:59:59 UTC.
-                    </p>
-                    <p>
-                        <a href="#foot" class="link dim blue">Email or tweet</a> us if you have any questions.
-                    </p>
-                </div>
-            </div>
         </div>
-        #}
-
-
 
         <div id="sponsors" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
             <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
