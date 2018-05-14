@@ -63,3 +63,4 @@ sessions.csv
 .DS_Store
 src/html/sessions/*.html
 src/html/index.html
+package-lock.json
