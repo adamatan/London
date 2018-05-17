@@ -6,8 +6,8 @@ from slugify import slugify
 from jinja2 import Template
 import urllib.request
 
-#BASE_URL = 'https://tlv.serverlessdays.io'
-BASE_URL = '..'
+BASE_URL = 'https://tlv.serverlessdays.io'
+#BASE_URL = '..'
 SESSIONS_URL = BASE_URL+'/sessions'
 SHARING_IMAGE_BASE_URL = BASE_URL + '/static/sharing-images'
 PROFILE_IMAGE_BASE_URL = BASE_URL + '/static/profile-images'
