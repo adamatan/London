@@ -145,7 +145,7 @@
                 <h2 class="f3 f2-ns tl">Agenda</h2>
 
  
-
+ADAM {{ image_style }}
 
     <table class="f4 w-100 center" cellspacing="0">
       <tbody class="lh-copy">
@@ -158,9 +158,9 @@
               <td class="pv3 pr3 bb b--black-20">{{ slot.start_time }}</td>
               <td class="pv3 pr3 bb b--black-20 v-top">
                     {% if slot.profile_image_override %}
-                      <img src="{{ slot.profile_image_override }}" alt="{{ slot.name }}" style="height:120px">
+                      <img src="{{ slot.profile_image_override }}" alt="{{ slot.name }}" {{ image_style }}>
                     {% else %}  
-                      <img src="{{ slot.profile_image_url }}" alt="{{ slot.name }}">
+                      <img src="{{ slot.profile_image_url }}" alt="{{ slot.name }}" {{ image_style }}>
                     {% endif %}  
               <td class="pv3 pr3 bb b--black-20">{{ slot.name }}</td>
             </tr>
@@ -173,9 +173,9 @@
 
               <td class="pv3 pr3 bb b--black-20 v-top">
                     {% if slot.profile_image_override %}
-                      <img src="{{ slot.profile_image_override }}" alt="{{ slot.name }}" style="height:120px">
+                      <img src="{{ slot.profile_image_override }}" alt="{{ slot.name }}" {{ image_style }}>
                     {% else %}  
-                      <img src="{{ slot.profile_image_url }}" alt="{{ slot.name }}">
+                      <img src="{{ slot.profile_image_url }}" alt="{{ slot.name }}" {{ image_style }}>
                     {% endif %}  
               </td>
 

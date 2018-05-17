@@ -11,6 +11,7 @@ BASE_URL = '..'
 SESSIONS_URL = BASE_URL+'/sessions'
 SHARING_IMAGE_BASE_URL = BASE_URL + '/static/sharing-images'
 PROFILE_IMAGE_BASE_URL = BASE_URL + '/static/profile-images'
+IMAGE_STYLE = 'width="220px"'
 
 """Replace the keys taken from Google Sheets csv with shorter ones"""
 keys_normal = {
@@ -60,6 +61,7 @@ def create_index_file(sessions, slots):
     with open('html/index.jinja2', encoding='utf-8') as f:
         template = Template(f.read())
     with open('html/index.html', 'w',  encoding='utf-8') as f:
+        image_style = IMAGE_STYLE
         f.write(template.render(locals()))
 
 download_csv_from_google_sheets()
