@@ -6,7 +6,8 @@ from slugify import slugify
 from jinja2 import Template
 import urllib.request
 
-BASE_URL = 'https://tlv.serverlessdays.io'
+#BASE_URL = 'https://tlv.serverlessdays.io'
+BASE_URL = '..'
 SESSIONS_URL = BASE_URL+'/sessions'
 SHARING_IMAGE_BASE_URL = BASE_URL + '/static/sharing-images'
 PROFILE_IMAGE_BASE_URL = BASE_URL + '/static/profile-images'
@@ -40,6 +41,7 @@ def normalize(d):
 
     rv['url'] = slugify('{} {}'.format(rv['name'], rv['session_title']))
     rv['absolute_url'] = '{}/{}.html'.format(SESSIONS_URL, rv['url'])
+    rv['relative_url'] = '{}/{}.html'.format('/sessions', rv['url'])
     rv['profile_image_path'] = '{}-profile.png'.format(slugify(rv['name']))
     rv['profile_image_url'] = PROFILE_IMAGE_BASE_URL + '/' + rv['profile_image_path']
     rv['facebook_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'facebook')

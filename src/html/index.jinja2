@@ -151,33 +151,45 @@
       <tbody class="lh-copy">
 
         {% for slot in slots | sort(attribute='start_time')  %}
+          {% if slot.start_time %}
+            {% if slot.break %}
 
-        {% if not slot.break %}
+            <tr>
+              <td class="pv3 pr3 bb b--black-20">{{ slot.start_time }}</td>
+              <td class="pv3 pr3 bb b--black-20 v-top">
+                    {% if slot.profile_image_override %}
+                      <img src="{{ slot.profile_image_override }}" alt="{{ slot.name }}" style="height:120px">
+                    {% else %}  
+                      <img src="{{ slot.profile_image_url }}" alt="{{ slot.name }}">
+                    {% endif %}  
+              <td class="pv3 pr3 bb b--black-20">{{ slot.name }}</td>
+            </tr>
 
-        <tr class="pb0">
-          <td class="pv3 pr3 bb b--black-20 ">{{ slot.start_time }}</td>
-          <td class="pv3 pr3 bb b--black-20 v-top">
-                <img src="{{ slot.profile_image_url }}" alt="{{ slot.name }}">
-          </td>
-          <td class="pv3 pr3 bb b--black-20">
-                {{ slot.name }}: 
-                <a href="{{ slot.absolute_url }}" class="link dim light-blue">
-                    {{ slot.session_title }}
-                </a>
-                {% if slot.duration == 'Keynote' %} <span class="f6 light-yellow">&emsp; ({{slot.duration}})</span> {% endif %}
-<p class="f5 pb0">{{ slot.session_subtitle }}</p>
-                </td>
-        </tr>
+            {% else %}
+            <tr class="pb0">
+              <td class="pv3 pr3 bb b--black-20 ">
+                {{ slot.start_time }}
+              </td>
 
-        {% else %}
+              <td class="pv3 pr3 bb b--black-20 v-top">
+                    {% if slot.profile_image_override %}
+                      <img src="{{ slot.profile_image_override }}" alt="{{ slot.name }}" style="height:120px">
+                    {% else %}  
+                      <img src="{{ slot.profile_image_url }}" alt="{{ slot.name }}">
+                    {% endif %}  
+              </td>
 
-        <tr>
-          <td class="pv3 pr3 bb b--black-20">{{ slot.start_time }}</td>
-          <td class="pv3 pr3 bb b--black-20">{{ slot.name }}</td>
-        </tr>
-
-        {% endif %}
-
+              <td class="pv3 pr3 bb b--black-20">
+                  {{ slot.name }}: 
+                  <a href="{{ slot.relative_url }}" class="link dim light-blue">
+                      {{ slot.session_title }}
+                  </a>
+                  {% if slot.duration == 'Keynote' %} <span class="f6 light-yellow">&emsp; ({{slot.duration}})</span> {% endif %}
+                  <p class="f5 pb0">{{ slot.session_subtitle }}</p>
+              </td>
+            </tr>
+            {% endif %}
+          {% endif %}
         {% endfor %}
 
       </tbody>
