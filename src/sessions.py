@@ -50,23 +50,27 @@ def normalize(d):
     rv['linkedin_sharing_image_url'] = build_sharing_image_url(rv['name'], rv['session_title'], 'linkedin')
     return rv
 
-def download_csv_from_google_sheets():
-    long_id = '10nuL6-3J9BfnrIr3R2WlK8vLfQeJ3eIjhip836MSwVw'
-    g_id = '480941883'
+def download_csv_from_google_sheets(long_id, g_id, filename):
     csv_url = 'https://docs.google.com/spreadsheets/d/{long_id}/export?gid={g_id}&format=csv&id={long_id}'.format(long_id=long_id, g_id=g_id)
-    print(csv_url)
-    urllib.request.urlretrieve(csv_url, "sessions.csv")
+    urllib.request.urlretrieve(csv_url, filename)
 
-def create_index_file(sessions, slots):
+def download_sessions():
+    long_id = '10nuL6-3J9BfnrIr3R2WlK8vLfQeJ3eIjhip836MSwVw'
+    g_id, filename = '480941883', 'sessions.csv'
+    download_csv_from_google_sheets(long_id, g_id, filename)
+    g_id, filename = '1571411013', 'sponsors.csv'
+    download_csv_from_google_sheets(long_id, g_id, filename)
+
+def create_index_file(sessions, slots, sponsors):
     with open('html/index.jinja2', encoding='utf-8') as f:
         template = Template(f.read())
     with open('html/index.html', 'w',  encoding='utf-8') as f:
         image_style = IMAGE_STYLE
         f.write(template.render(locals()))
 
-download_csv_from_google_sheets()
+download_sessions()
 
-# CSV from Google Sheets
+# Sessions CSV from Google Sheets
 with open('sessions.csv', encoding='utf-8') as f:
     READER = csv.DictReader(f)
     lines = list(READER)
@@ -74,7 +78,12 @@ with open('sessions.csv', encoding='utf-8') as f:
     SESSIONS = [s for s in slots if not s['break']]
     BREAKS = [s for s in slots if s['break']]
 
-create_index_file(SESSIONS, slots)
+# Sponsors CSV from Google Sheets
+with open('sponsors.csv', encoding='utf-8') as f:
+    READER = csv.DictReader(f)
+    sponsors = list(READER)
+
+create_index_file(SESSIONS, slots, sponsors)
 
 # Session template
 with open('html/sessions/template.jinja2', encoding='utf-8') as f:
@@ -87,12 +96,9 @@ with open('html/sessions/sessions.jinja2', encoding='utf-8') as f:
 # Create session we
 for session in SESSIONS:
     local_file_path = 'html/sessions/{}.html'.format(session['url'])
-    print('{}: {}'.format(session['name'], session['session_title']))
     with open(local_file_path, 'w', encoding='utf-8') as f:
         f.write(template.render(session))
 
-print(session.keys())
-print (session)
 # Write temporary sessions file
 local_file_path = 'html/sessions/sessions.html'
 with open(local_file_path, 'w', encoding='utf-8') as f:
@@ -100,5 +106,4 @@ with open(local_file_path, 'w', encoding='utf-8') as f:
 
 absolute_urls = [ s['absolute_url'] for s in SESSIONS ]
 
-print('\n'.join(absolute_urls))
 
