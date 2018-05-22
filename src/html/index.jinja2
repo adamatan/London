@@ -112,6 +112,7 @@
                         <a href="#about" class="link dim blue">About</a> //
                         <a href="#agenda" class="link dim blue">Agenda</a> //
                         <a href="https://www.eventbrite.com/e/serverless-days-tlv-tickets-44959103890" class="link dim blue">Register</a> //
+                        <a href="#jobs" class="link dim blue">Jobs!</a> //
                         <a href="#sponsors" class="link dim blue">Sponsors</a>
                     </div>
                 </div>
@@ -193,54 +194,88 @@
       </tbody>
     </table>
 
-    {#
-                {% for session in sessions %}
-                <div class="pa2 mr2">
-                    <table style="width:100%">
-                        <tr>
-                            <a href="{{ session.absolute_url }}" class="link dim blue"><h1>{{ session.session_title }}</h1></a>
-                            
-                        </tr>
-                        <tr>
-                            <p>{{ session.session_subtitle }}</p>
-                        </tr>
-                        <tr>
-                                <div class="w-25 pa3 mr2" style="min-width: 250px; max-width: 300px">
-                                    <a href="{{ session.absolute_url }}">
-                                        <img src="{{ session.profile_image_url }}" alt="{{ session.name }}">
-                                    </a>
-                                </div>
-                        <tr>
-                            <h4>{{ session.name }}, {{ session.speaker_title }}</h4>
-                        </tr>
-                        </tr> 
-                    </table>
-                </div>
-                {% endfor %}
-                #}
             </div>
         </div>   
         
 
 
-        {#
-        <div id="speakers" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
+        <div id="jobs" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
             <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
-                <h2 class="f3 f2-ns tl">Speakers</h2>
+            <h2 class="f3 f2-ns tl">Jobs</h2>
 
-                <div id="speakers-logos" class="flex-wrap">
-                  {% for session in sessions | sort(attribute='duration')  %}
-                    <div class="w-50 h-25 pa3 mr2" >
-                      <a href="{{ session.absolute_url }}">
-                      <img src="{{ session.profile_image_url }}" alt="{{ session.name }}">
-                      </a>
-                      <p class="f3"> {{ session.name }}, <span class="f4"> {{ session.speaker_title }} </span></p>
-                    </div>
-                    {% endfor %}
-                </div>
+            <table class="f4 w-100 center" cellspacing="0">
+                <tbody class="lh-copy">
+
+                
+                        <tr class="pb0">                
+                            <td class="pv3 pr3 bb b--black-20 v-top">
+                                    <img src="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522843555/binaris-logo.svg" alt="Binaris" width="150px">
+                            </td>
+
+                            <td class="pv3 pr3 bb b--black-20">
+                                <p>Not looking for a job? Great. Click <a href="https://github.com/binaris/jobs" class="link dim light-blue">here</a>.</p>
+                            </td>
+                        </tr>
+
+        
+        
+                        <tr class="pb0">                
+                            <td class="pv3 pr3 bb b--black-20 v-top">
+                                    <img src="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522843159/AWS.svg" alt="AWS" width="150px">
+                            </td>
+
+                            <td class="pv3 pr3 bb b--black-20">
+                                <p><a href="https://aws.amazon.com/lambda" class="link dim light-blue">AWS Lambda</a> jobs: 
+                                <a href="https://www.amazon.jobs/en/jobs/639782/senior-software-development-engineer" class="link dim light-blue">Senior software development engineer</a>, Software development engineer for 
+                                <a href="https://www.amazon.jobs/en/jobs/632734/software-development-engineer-api-gateway" class="link dim light-blue">API Gateway</a> and 
+                                <a href="https://www.amazon.jobs/en/jobs/643467/software-development-engineer-aws-serverless-apps" class="link dim light-blue">AWS Serverless Apps</a></p>
+
+                            </td>
+                        </tr>
+
+                        <tr class="pb0">                
+                            <td class="pv3 pr3 bb b--black-20 v-top">
+                                    <img src="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522842921/Puresec_H.png" alt="Puresec" width="150px">
+                            </td>
+
+                            <td class="pv3 pr3 bb b--black-20">
+                                <p>Puresec is <a href="https://tlv.serverlessdays.io/static/Puresec-jobs.pdf" class="link dim light-blue">hiring</a> a Backend Team Lead, VP Product Management and a Senior Product Marketing Manager.</p>
+                            </td>
+
+                        </tr>
+
+
+                        <tr class="pb0">                
+                            <td class="pv3 pr3 bb b--black-20 v-top">
+                                    <img src="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1522842921/Wix.png" alt="Wix" width="150px">
+                            </td>
+                            <td class="pv3 pr3 bb b--black-20">
+                                <p>At Wix’s Engineering group, lead developers shape the architecture of our services and product. More info <a href="https://www.wix.com/jobs/home" class="link dim light-blue">here</a>.</p>
+                            </td>
+                        </tr>
+
+
+                        <tr class="pb0">                
+                            <td class="pv3 pr3 bb b--black-20 v-top">
+                                    <img src="https://res.cloudinary.com/serverlessdaystlv/image/upload/v1523275697/Epsagon-square-logo.svg" alt="Wix" width="150px">
+                            </td>
+                            <td class="pv3 pr3 bb b--black-20">
+                                <p> <a href="https://www.epsagon.com/" class="link dim light-blue">Epsagon</a> is hiring a senior full stack developer, experienced in front-end development. Advantage: React knowledge.</p>
+                            </td>
+                        </tr>
+
+
+
+
+
+
+                </tbody>
+                </table>
             </div>
-        </div>
-        #}
+		</div>
+
+
+
         <div id="sponsors" class="relative w-100 bg-black-80 pt2 pt0-ns mt0">
             <div class="mw6 mw7-ns center avenir near-white pt3 pt4-ns ph2 pb2">
                 <h2 class="f3 f2-ns tl">Sponsors</h2>

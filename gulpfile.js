@@ -40,6 +40,7 @@ gulp.task('copy', function() {
             'src/*.xml',
             'src/html/**/*.pdf',
             'src/html/**/*.png',
+            'src/html/**/*.zip',
             'src/html/**/*.svg',
             'src/html/**/*.jpg',
             'src/html-compiled/**/*.html'
